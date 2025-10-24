@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Quiz Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header -->
+        <header class="quiz-header">
+            <h1>🎨 Quiz Challenge</h1>
+            <p class="subtitle">Test your knowledge!</p>
+        </header>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="start-content">
+                <h2>Welcome to the Quiz!</h2>
+                <p>Answer 10 exciting questions and test your knowledge.</p>
+                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p class="progress-text"><span id="currentQuestion">1</span> / <span id="totalQuestions">10</span></p>
+            </div>
+
+            <div class="question-container">
+                <h2 id="questionText" class="question-text"></h2>
+                <div id="optionsContainer" class="options-container"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn" style="display: none;">← Previous</button>
+                <button class="btn btn-primary" onclick="nextQuestion()" id="nextBtn">Next →</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h2>Quiz Complete! 🎉</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="finalScore" class="score-number">0</span>
+                        <span class="score-total">/ 10</span>
+                    </div>
+                </div>
+                <p id="resultMessage" class="result-message"></p>
+                <button class="btn btn-primary" onclick="restartQuiz()">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
